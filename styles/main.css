@@ -58,7 +58,8 @@ body {
 	border-bottom: 1px solid var(--outline);
 }
 #field { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-.hero-content { position: relative; z-index: 1; padding: 120px 0 80px; }
+#blackhole { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.hero-content { position: relative; z-index: 2; padding: 120px 0 80px; }
 .hero h1 { font-size: clamp(32px, 6vw, 64px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.5px; }
 .hero .accent { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { color: var(--muted); max-width: 900px; font-size: 18px; }
@@ -110,5 +111,386 @@ body::after {
 	background-size: 40px 40px;
 	mix-blend-mode: multiply;
 	opacity: 0.08;
+}
+
+/* Physics-inspired animations */
+@keyframes gravitational-pull {
+	0% { transform: scale(1) rotate(0deg); }
+	50% { transform: scale(1.05) rotate(180deg); }
+	100% { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes neural-pulse {
+	0%, 100% { opacity: 0.3; transform: scale(1); }
+	50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes quantum-fluctuation {
+	0%, 100% { transform: translateX(0) translateY(0); }
+	25% { transform: translateX(2px) translateY(-1px); }
+	50% { transform: translateX(-1px) translateY(2px); }
+	75% { transform: translateX(1px) translateY(1px); }
+}
+
+@keyframes energy-flow {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Enhanced card animations */
+.card {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(37,99,235,0.1), transparent);
+	transition: left 0.5s;
+}
+
+.card:hover::before {
+	left: 100%;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+}
+
+/* Neural network inspired text effects */
+.accent {
+	animation: neural-pulse 3s ease-in-out infinite;
+	position: relative;
+}
+
+.accent::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(45deg, transparent 30%, rgba(37,99,235,0.1) 50%, transparent 70%);
+	animation: energy-flow 2s linear infinite;
+	pointer-events: none;
+}
+
+/* Quantum-inspired button effects */
+.button {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.button::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+	transition: all 0.6s ease;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+}
+
+.button:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.button.primary:hover {
+	animation: quantum-fluctuation 0.3s ease-in-out;
+	box-shadow: 0 8px 25px rgba(37,99,235,0.3);
+}
+
+/* Physics-inspired section backgrounds */
+.section.alt {
+	background: linear-gradient(135deg, 
+		rgba(37,99,235,0.05) 0%, 
+		rgba(124,58,237,0.03) 25%, 
+		rgba(37,99,235,0.05) 50%, 
+		rgba(124,58,237,0.03) 75%, 
+		rgba(37,99,235,0.05) 100%);
+	background-size: 200% 200%;
+	animation: energy-flow 8s ease-in-out infinite;
+}
+
+/* Additional physics-inspired effects */
+.hero h1 {
+	/* Removed rotation animation - keeping it static */
+}
+
+/* Neural network connection lines */
+.people li {
+	position: relative;
+}
+
+.people li::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -20px;
+	width: 15px;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--accent));
+	animation: neural-pulse 2s ease-in-out infinite;
+}
+
+/* Quantum field effects */
+.section {
+	position: relative;
+}
+
+.section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: radial-gradient(circle at 20% 80%, rgba(37,99,235,0.03) 0%, transparent 50%),
+	            radial-gradient(circle at 80% 20%, rgba(124,58,237,0.03) 0%, transparent 50%);
+	pointer-events: none;
+	animation: quantum-fluctuation 10s ease-in-out infinite;
+}
+
+/* Enhanced logo animation */
+.brand .logo {
+	transition: all 0.3s ease;
+	animation: neural-pulse 4s ease-in-out infinite;
+}
+
+.brand:hover .logo {
+	transform: scale(1.1) rotate(5deg);
+	filter: drop-shadow(0 0 10px rgba(37,99,235,0.3));
+}
+
+/* Charts grid layout */
+.charts-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 24px;
+	margin-top: 24px;
+}
+
+.chart-container {
+	text-align: center;
+}
+
+.chart-container h3 {
+	margin-bottom: 12px;
+	font-size: 18px;
+	color: var(--text);
+}
+
+.chart-container p {
+	margin-top: 8px;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+/* Chart animations */
+@keyframes chart-glow {
+	0%, 100% { box-shadow: 0 0 5px rgba(37,99,235,0.1); }
+	50% { box-shadow: 0 0 20px rgba(37,99,235,0.3); }
+}
+
+.chart-container canvas {
+	transition: all 0.3s ease;
+	animation: chart-glow 3s ease-in-out infinite;
+}
+
+.chart-container:hover canvas {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(37,99,235,0.2);
+}
+
+/* Project status indicators */
+.project-status {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	margin-top: 12px;
+}
+
+.project-status:contains("In Progress") {
+	background: linear-gradient(135deg, #fbbf24, #f59e0b);
+	color: #92400e;
+}
+
+.project-status:contains("Active") {
+	background: linear-gradient(135deg, #10b981, #059669);
+	color: #064e3b;
+}
+
+.project-status:contains("Planning") {
+	background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+	color: #4c1d95;
+}
+
+/* Enhanced project cards */
+.projects .card {
+	position: relative;
+	overflow: hidden;
+}
+
+.projects .card::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-top: 20px solid var(--accent);
+	opacity: 0.1;
+}
+
+/* Research page styles */
+.research-focus {
+	margin-top: 12px;
+	padding: 8px 12px;
+	background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1));
+	border-radius: 8px;
+	font-size: 14px;
+	color: var(--muted);
+}
+
+.publications {
+	display: grid;
+	gap: 20px;
+	margin-top: 16px;
+}
+
+.publication-item {
+	background: var(--panel);
+	border: 1px solid var(--outline);
+	border-radius: 12px;
+	padding: 20px;
+	transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(37,99,235,0.1);
+}
+
+.publication-item h4 {
+	margin: 0 0 8px 0;
+	color: var(--text);
+	font-size: 18px;
+}
+
+.publication-item .authors {
+	margin: 0 0 4px 0;
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.publication-item .venue {
+	margin: 0 0 12px 0;
+	color: var(--muted);
+	font-style: italic;
+	font-size: 14px;
+}
+
+.publication-item .abstract {
+	margin: 0;
+	color: var(--muted);
+	line-height: 1.5;
+}
+
+.tool-links {
+	display: flex;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+.collaboration-cta {
+	display: flex;
+	gap: 12px;
+	margin-top: 16px;
+}
+
+/* Collaboration page styles */
+.collaboration-details {
+	margin-top: 12px;
+	padding: 8px 12px;
+	background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1));
+	border-radius: 8px;
+	font-size: 14px;
+	color: var(--muted);
+}
+
+.collaboration-status {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	margin-top: 12px;
+	background: linear-gradient(135deg, #10b981, #059669);
+	color: #064e3b;
+}
+
+.collaboration-process {
+	display: grid;
+	gap: 20px;
+	margin-top: 24px;
+}
+
+.process-step {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 20px;
+	background: var(--panel);
+	border: 1px solid var(--outline);
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+
+.process-step:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(37,99,235,0.1);
+}
+
+.step-number {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, var(--accent), var(--accent-2));
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 18px;
+	flex-shrink: 0;
+}
+
+.step-content h4 {
+	margin: 0 0 8px 0;
+	color: var(--text);
+	font-size: 18px;
+}
+
+.step-content p {
+	margin: 0;
+	color: var(--muted);
+	line-height: 1.5;
 }
 
