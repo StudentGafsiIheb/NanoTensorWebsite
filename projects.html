@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Projects — NanoTensor</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<a class="brand" href="index.html">
+				<img class="logo" src="assets/logo.svg" alt="NanoTensor logo">
+				<span class="brand-text">NanoTensor</span>
+			</a>
+			<nav class="site-nav">
+				<a href="projects.html">Projects</a>
+				<a href="research.html">Research</a>
+				<a href="collaborations.html">Collaborations</a>
+				<a href="team.html">Team</a>
+				<a href="careers.html">Careers</a>
+				<a href="contact.html" class="cta">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="section">
+		<div class="container">
+			<h1>Projects</h1>
+			<p class="lead">Examples of things we build. Placeholder content.</p>
+			<h2>Case Studies</h2>
+			<div class="cards">
+				<article class="card">
+					<h3>NT-Train: Distributed Training Stack</h3>
+					<p>Composable pipelines for multi-node training with experiment tracking, autoscaling, and cost controls.</p>
+					<ul>
+						<li>Autoscaling from 8 to 128 GPUs (placeholder)</li>
+						<li>Throughput +35% via fused ops (placeholder)</li>
+						<li>Cost per token -40% (placeholder)</li>
+					</ul>
+				</article>
+				<article class="card">
+					<h3>NT-Opt: Optimizer Research</h3>
+					<p>Exploration of adaptive schedules, sharpness-aware methods, and low-precision stability for large models.</p>
+					<ul>
+						<li>Stable BF16 training at batch 4M (placeholder)</li>
+						<li>Convergence -20% steps on benchmark (placeholder)</li>
+					</ul>
+				</article>
+				<article class="card">
+					<h3>NT-Eval: Robustness & Monitoring</h3>
+					<p>Evaluation suite for distribution shift, calibration, and interpretability with dashboards for production.</p>
+					<ul>
+						<li>Shift detection latency < 2s (placeholder)</li>
+						<li>Calibration drift alerts (placeholder)</li>
+					</ul>
+				</article>
+			</div>
+
+			<h2 style="margin-top:28px;">Tech Stack</h2>
+			<ul>
+				<li>Training: PyTorch, DeepSpeed, NCCL, custom schedulers</li>
+				<li>Serving: vLLM, Triton, CUDA Graphs</li>
+				<li>Ops: Kubernetes, Terraform, Prometheus/Grafana</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© <span id="year"></span> NanoTensor s.r.o. All rights reserved.</p>
+		</div>
+	</footer>
+	<script src="scripts/main.js"></script>
+</body>
+</html>
+
